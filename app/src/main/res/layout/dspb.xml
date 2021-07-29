@@ -10,6 +10,7 @@
         android:padding="10dp">
 
         <TextView
+            android:padding="10dp"
             android:id="@+id/pb_ten"
             android:text="Phòng ban"
             android:textColor="#DD040404"

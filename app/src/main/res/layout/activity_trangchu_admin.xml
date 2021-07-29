@@ -17,16 +17,16 @@
             android:layout_marginTop="80dp">
 
             <ImageView
-                android:id="@+id/hinh_user"
+                android:id="@+id/User_avatar"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/user"
                 android:padding="20dp" />
 
             <TextView
-                android:id="@+id/usertext"
+                android:id="@+id/userName"
                 android:padding="10dp"
-                android:layout_toRightOf="@+id/hinh_user"
+                android:layout_toRightOf="@+id/User_avatar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal|center_vertical"
@@ -36,16 +36,16 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/vitri"
-                android:layout_toRightOf="@+id/hinh_user"
+                android:id="@+id/userChucvu"
+                android:layout_toRightOf="@+id/User_avatar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/usertext"
+                android:layout_below="@+id/userName"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Nhân viên"
                 android:textColor="@color/white"
                 android:textSize="23sp"
-                app:layout_constraintTop_toBottomOf="@+id/usertext" />
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
         </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout

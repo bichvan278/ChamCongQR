@@ -28,6 +28,7 @@
             android:layout_below="@+id/nvSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/black"
             android:text="Danh sách nhân viên"
             android:textSize="18sp"
             android:textColor="#E1512C"
