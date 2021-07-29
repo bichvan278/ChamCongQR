@@ -27,26 +27,26 @@ public class Themchucvu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_themchucvu);
 
-        tencv = (EditText) findViewById(R.id.tencv);
-        themcvBtn = (Button) findViewById(R.id.btnThemcv);
-
-        dscvAdapter = new DSCVAdapter(chucvuList);
-
-        themcvBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ten_cv = tencv.getText().toString();
-
-                    Chucvu chucvu = new Chucvu();
-
-                    chucvu.setCv_ten(ten_cv);
-
-                chucvuList.add(chucvu);
-                dscvAdapter.notifyDataSetChanged();
-                Toast.makeText(Themchucvu.this, "Them chuc vu thanh cong",
-                                                        Toast.LENGTH_LONG).show();
-                tencv.setText("");
-            }
-        });
+//        tencv = (EditText) findViewById(R.id.tencv);
+//        themcvBtn = (Button) findViewById(R.id.btn);
+//
+//        dscvAdapter = new DSCVAdapter(chucvuList);
+//
+//        themcvBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ten_cv = tencv.getText().toString();
+//
+//                    Chucvu chucvu = new Chucvu();
+//
+//                    chucvu.setCv_ten(ten_cv);
+//
+//                chucvuList.add(chucvu);
+//                dscvAdapter.notifyDataSetChanged();
+//                Toast.makeText(Themchucvu.this, "Them chuc vu thanh cong",
+//                                                        Toast.LENGTH_LONG).show();
+//                tencv.setText("");
+//            }
+//        });
     }
 }

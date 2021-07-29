@@ -4,64 +4,61 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.chamcong.Object.Chucvu;
+import com.example.chamcong.MyUtil;
 import com.example.chamcong.R;
 
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
-public class DSCVAdapter extends RecyclerView.Adapter<DSCVAdapter.ViewHolder> {
+public class DSCVAdapter extends BaseAdapter {
 
-    Context context;
-    List<Chucvu> chucvuList;
+    private Context context;
+    private JSONArray jsonArrayChucvu;
 
-    public DSCVAdapter(List<Chucvu> chucvuList, Context context) {
+    public DSCVAdapter(Context context, JSONArray jsonArrayChucvu) {
         this.context = context;
-        this.chucvuList = chucvuList;
-    }
-
-//    public DSCVAdapter(List<Chucvu> chucvuList) {
-//        this.chucvuList = chucvuList;
-//    }
-    public int getItemCount() {
-    return chucvuList.size();
-}
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.dscv, parent, false);
-        return new ViewHolder(itemView);
+        this.jsonArrayChucvu = MyUtil.jsonArrayChucvu;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Chucvu chucvu = chucvuList.get(position);
-
-        holder.cv_ten.setText(chucvu.cv_ten);
-//        holder.cv_id.setText(String.valueOf(chucvu.cv_id));
-
+    public int getCount() {
+        return jsonArrayChucvu.length();
     }
 
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-
-        public TextView cv_ten, cv_id;
-//        public ImageView ivAvatar;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-
-            cv_ten = (TextView) itemView.findViewById(R.id.cv_ten);
-//            cv_id = (TextView) itemView.findViewById(R.id.cv_id);
-//            ivAvatar = (ImageView) itemView.findViewById(R.id.cv_avatar);
-
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.dscv, parent, false);
         }
+
+        TextView cvTen = (TextView) convertView.findViewById(R.id.cv_ten);
+//        TextView cvID = (TextView) convertView.findViewById(R.id.cvId);
+
+        try {
+            JSONObject jsonObject = jsonArrayChucvu.getJSONObject(position);
+
+
+//            cvID.setText(jsonObject.getString("cv_id"));
+            cvTen.setText(jsonObject.getString("cv_ten"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return convertView;
     }
 }
