@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chamcong">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -15,10 +16,7 @@
         <activity android:name=".XoaPhongBan"/>
         <activity android:name=".SuaPhongBan" />
         <activity android:name=".ThemPhongBan" />
-        <activity android:name=".QuanLyPhongBan" />
-        <activity android:name=".Thongke" >
-
-        </activity>
+        <activity android:name=".Thongke"/>
         <activity android:name=".ThemNhanVien" />
         <activity android:name=".TestTabLayoutActivity" />
         <activity android:name=".Lichsuchamcong"/>
@@ -31,20 +29,22 @@
         <activity android:name=".Xoanhanvien" />
         <activity android:name=".Suachucvu" />
         <activity android:name=".Themchucvu" />
+        <activity android:name=".Dieuchinhnhanvien" />
         <activity android:name=".Thongtinphongban" android:parentActivityName=".QuanLyPhongBan"></activity>
         <activity android:name=".Thongtinchucvu" android:parentActivityName=".Quanlychucvu"></activity>
         <activity android:name=".Thongtinuser" android:parentActivityName=".Quanlynhanvien" ></activity>
         <activity android:name=".Quanlychucvu">
+        </activity>
+        <activity android:name=".Quanlynhanvien">
+        </activity>
+        <activity android:name=".QuanLyPhongBan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
 
-        </activity>
-        <activity android:name=".Quanlynhanvien">
-        </activity>
-        <activity android:name=".Dieuchinhnhanvien" />
 
         <meta-data
             android:name="com.google.android.actions"
