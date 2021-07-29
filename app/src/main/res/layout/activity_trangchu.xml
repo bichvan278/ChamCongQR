@@ -4,65 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Trangchu">
+    tools:context=".Trangchu"
+    android:orientation="horizontal">
     <RelativeLayout
-        android:layout_width="414dp"
-        android:layout_height="270dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
         android:background="#E1512C">
-        <LinearLayout
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="130sp"
-            android:layout_marginLeft="20sp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp">
+
             <ImageView
                 android:id="@+id/hinh_user"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
                 android:background="@drawable/user"
-                />
+                android:padding="20dp" />
+
             <TextView
                 android:id="@+id/usertext"
-                android:layout_width="150dp"
-                android:layout_height="78dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:layout_toRightOf="@+id/hinh_user"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="Nguyễn Văn A"
                 android:textColor="@color/white"
                 android:textSize="23sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal|center_vertical"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/vitri"
-                android:layout_width="150dp"
-                android:layout_height="78dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="-150dp"
-                android:layout_alignParentTop="true"
-                app:layout_constraintTop_toBottomOf="@+id/usertext"
-                android:layout_marginTop="35dp"
+                android:layout_toRightOf="@+id/hinh_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usertext"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="Nhân viên"
                 android:textColor="@color/white"
                 android:textSize="23sp"
-                android:gravity="center_horizontal|center_vertical"
-                />
-        </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@+id/usertext" />
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginStart="-425dp"
-        android:layout_marginTop="300dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-415dp"
+        android:layout_marginTop="250dp">
 
+        <Button
+            android:id="@+id/scanBtn"
+            android:layout_width="180sp"
+            android:layout_height="120sp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/black"
+            android:text="CHẤM CÔNG"
+            android:textAlignment="center" />
         <Button
             android:id="@+id/historyBtn"
             android:layout_width="180sp"
@@ -75,12 +75,13 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/scanBtn"
+            android:id="@+id/infoBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/scanBtn"
             android:backgroundTint="@color/black"
-            android:text="CHẤM CÔNG"
+            android:text="THÔNG TIN\n CÁ NHÂN"
             android:textAlignment="center" />
 
         <Button
@@ -93,16 +94,6 @@
             android:layout_toEndOf="@id/historyBtn"
             android:backgroundTint="@color/black"
             android:text="ĐĂNG XUẤT"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/infoBtn"
-            android:layout_width="180sp"
-            android:layout_height="120sp"
-            android:layout_marginStart="15dp"
-            android:layout_toEndOf="@id/scanBtn"
-            android:backgroundTint="@color/black"
-            android:text="THÔNG TIN\n CÁ NHÂN"
             android:textAlignment="center" />
 
     </RelativeLayout>
