@@ -17,6 +17,8 @@ public class Trangchu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trangchu);
+        setTitle("Trang chủ");
+
         scanBtn = findViewById(R.id.scanBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
         historyBtn = findViewById(R.id.historyBtn);

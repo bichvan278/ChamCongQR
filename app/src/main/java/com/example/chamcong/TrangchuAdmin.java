@@ -6,18 +6,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static com.example.chamcong.MyUtil.jsonArrayUser;
 
 public class TrangchuAdmin extends AppCompatActivity {
 
     Button scanBtn, logoutBtn, historyBtn, infoBtn, manageuserBtn,
                         manageposBtn, managedepBtn, statisticalBtn;
-
+    TextView nv_hoten, nv_chucvu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trangchu_admin);
+        setTitle("Trang chủ Admin");
+
+        nv_hoten = findViewById(R.id.userName);
+        nv_chucvu = findViewById(R.id.userChucvu);
+
         scanBtn = findViewById(R.id.scanBtn);
         historyBtn = findViewById(R.id.historyBtn);
         infoBtn = findViewById(R.id.infoBtn);
