@@ -19,14 +19,16 @@ public class TrangchuAdmin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trangchu_admin);
         scanBtn = findViewById(R.id.scanBtn);
-        logoutBtn = findViewById(R.id.logoutBtn);
         historyBtn = findViewById(R.id.historyBtn);
         infoBtn = findViewById(R.id.infoBtn);
+        logoutBtn = findViewById(R.id.logoutBtn);
         managedepBtn = findViewById(R.id.managedepBtn);
         manageposBtn = findViewById(R.id.manageposBtn);
         manageuserBtn = findViewById(R.id.manageuserBtn);
         statisticalBtn = findViewById(R.id.statisticalBtn);
 
+
+        //scan QR
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +37,7 @@ public class TrangchuAdmin extends AppCompatActivity {
             }
         });
 
+        //lịch sử chấm công
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +46,7 @@ public class TrangchuAdmin extends AppCompatActivity {
             }
         });
 
+        //thông tin admin
         infoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +55,7 @@ public class TrangchuAdmin extends AppCompatActivity {
             }
         });
 
+        //logout
         Intent in = getIntent();
         String string = in.getStringExtra("message");
         logoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +80,42 @@ public class TrangchuAdmin extends AppCompatActivity {
                         });
                 AlertDialog alert11 = builder.create();
                 alert11.show();
+            }
+        });
+
+        //quản lý phòng ban
+        managedepBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TrangchuAdmin.this, QuanLyPhongBan.class);
+                startActivity(i);
+            }
+        });
+
+        //quản lý chức vụ
+        manageposBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TrangchuAdmin.this, Quanlychucvu.class);
+                startActivity(i);
+            }
+        });
+
+        //quản lý nhân viên
+        manageuserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TrangchuAdmin.this, Quanlynhanvien.class);
+                startActivity(i);
+            }
+        });
+
+        //thống kê
+        statisticalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TrangchuAdmin.this, Thongke.class);
+                startActivity(i);
             }
         });
     }
