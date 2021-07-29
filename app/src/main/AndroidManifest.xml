@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChamCong">
-        <activity android:name=".XoaPhongBan"></activity>
+        <activity android:name=".XoaPhongBan"/>
         <activity android:name=".SuaPhongBan" />
         <activity android:name=".ThemPhongBan" />
         <activity android:name=".QuanLyPhongBan" />
@@ -21,20 +21,19 @@
         </activity>
         <activity android:name=".ThemNhanVien" />
         <activity android:name=".TestTabLayoutActivity" />
-        <activity android:name=".Lichsuchamcong">
-
-        </activity>
+        <activity android:name=".Lichsuchamcong"/>
         <activity android:name=".Doimatkhau" />
-        <activity android:name=".Thongtinuser" />
         <activity android:name=".ScanQR" />
-        <activity android:name=".TrangchuAdmin" >
-        </activity>
-        <activity android:name=".Trangchu" ></activity>
+        <activity android:name=".TrangchuAdmin"/>
+        <activity android:name=".Trangchu"/>
         <activity android:name=".Dangnhap" />
         <activity android:name=".Xoachucvu" />
         <activity android:name=".Xoanhanvien" />
         <activity android:name=".Suachucvu" />
         <activity android:name=".Themchucvu" />
+        <activity android:name=".Thongtinphongban" android:parentActivityName=".QuanLyPhongBan"></activity>
+        <activity android:name=".Thongtinchucvu" android:parentActivityName=".Quanlychucvu"></activity>
+        <activity android:name=".Thongtinuser" android:parentActivityName=".Quanlynhanvien" ></activity>
         <activity android:name=".Quanlychucvu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
