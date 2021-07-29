@@ -75,16 +75,16 @@
             android:hint="Địa chỉ"
             android:textColor="#C4C4C4"/>
 
-            <EditText
-                android:id="@+id/phuong"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/diachi"
-                android:hint="Phường"
-                android:textColor="#C4C4C4"
-                android:textAlignment="center" />
+        <EditText
+            android:id="@+id/phuong"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/diachi"
+            android:hint="Phường"
+            android:textColor="#C4C4C4"
+            android:textAlignment="center" />
 
         <EditText
             android:id="@+id/quan"
@@ -113,7 +113,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="335dp"
             android:layout_marginLeft="20dp"
-            android:layout_above="@+id/bophan"
             android:hint="Chức vụ"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
@@ -124,6 +123,7 @@
             android:layout_marginLeft="20dp"
             android:layout_below="@+id/chucvu"
             android:hint="Bộ phận"
+            android:id="@+id/phongban"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
     </RelativeLayout>

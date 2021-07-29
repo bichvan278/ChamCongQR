@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Thongtinchucvu"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A3137">
+        <TextView
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
+            android:text="Thông tin chức vụ"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal|center_vertical"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/cvId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="ID Chức vụ"
+            android:textColor="#C4C4C4" />
+        <TextView
+            android:id="@+id/cvTen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_below="@id/cvId"
+            android:hint="Tên Chức vụ"
+            android:textColor="#C4C4C4" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

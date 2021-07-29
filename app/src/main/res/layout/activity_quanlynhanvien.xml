@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,42 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="114dp"
-        android:background="#2A3137">
-        <TextView
-            android:layout_width="285dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="64dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="45dp"
-            android:text="Quản lý nhân viên"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal|center_vertical" />
-    </LinearLayout>
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="0dp">
-        <Button
-            android:id="@+id/btnThemnv"
-            android:layout_width="350dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#241C1C"
-            android:text="Thêm nhân viên"
-            android:textAlignment="center"
-            android:textColor="#E1512C"
-            android:textSize="18dp"/>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
         <SearchView
-            android:id="@+id/btnTimnv"
-            android:layout_below="@id/btnThemnv"
+            android:id="@+id/nvSearch"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -54,46 +23,21 @@
             android:queryHint="Tìm kiếm nhân viên">
             <requestFocus />
         </SearchView>
-        <Spinner
-            android:id="@+id/chucvu"
-            android:layout_below="@+id/btnTimnv"
-            android:layout_width="205dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:entries="@array/spinner_data"/>
-        <Spinner
-            android:id="@+id/bophan"
-            android:layout_width="205dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/chucvu"
-            android:layout_below="@+id/btnTimnv"
-            android:entries="@array/spinner_data"/>
         <TextView
             android:id="@+id/title"
-            android:layout_width="290dp"
-            android:layout_height="23dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="63dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="195dp"
-            android:layout_below="@id/chucvu"
+            android:layout_below="@+id/nvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Danh sách nhân viên"
             android:textSize="18sp"
             android:textColor="#E1512C"
+            android:padding="10dp"
             android:gravity="center_horizontal|center_vertical" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nvRecycleview"
+        <ListView
+            android:id="@+id/nvListview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/title"
             android:layout_marginTop="10dp" />
-
     </RelativeLayout>
-
 </LinearLayout>
