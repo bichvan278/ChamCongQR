@@ -35,24 +35,24 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"
-            android:text="Họ và tên"
+            android:layout_marginLeft="20dp"
+            android:hint="Họ và tên"
             android:textColor="#C4C4C4" />
         <EditText
             android:id="@+id/sdt"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_below="@id/hoten"
-            android:text="Số điện thoại"
+            android:hint="Số điện thoại"
             android:textColor="#C4C4C4" />
         <EditText
             android:id="@+id/gioitinh"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_below="@id/sdt"
             android:text="Giới tính"
             android:textColor="#C4C4C4"/>
@@ -61,28 +61,28 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_below="@id/gioitinh"
-            android:text="Email"
+            android:hint="Email"
             android:textColor="#C4C4C4"/>
         <EditText
             android:id="@+id/diachi"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_below="@id/email"
-            android:text="Địa chỉ"
+            android:hint="Địa chỉ"
             android:textColor="#C4C4C4"/>
 
             <EditText
                 android:id="@+id/phuong"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/diachi"
-                android:text="Phường"
+                android:hint="Phường"
                 android:textColor="#C4C4C4"
                 android:textAlignment="center" />
 
@@ -93,7 +93,7 @@
             android:layout_marginLeft="9dp"
             android:layout_marginTop="286dp"
             android:layout_toRightOf="@+id/phuong"
-            android:text="Quận"
+            android:hint="Quận"
             android:textAlignment="center"
             android:textColor="#C4C4C4" />
 
@@ -104,7 +104,7 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="286dp"
                 android:layout_toRightOf="@+id/quan"
-                android:text="Thành phố"
+                android:hint="Thành phố"
                 android:textColor="#C4C4C4"
                 android:textAlignment="center" />
         <TextView
@@ -112,18 +112,18 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="335dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_above="@+id/bophan"
-            android:text="Chức vụ"
+            android:hint="Chức vụ"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
         <TextView
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_below="@+id/chucvu"
-            android:text="Bộ phận"
+            android:hint="Bộ phận"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -140,7 +140,7 @@
             android:textColor="#E1512C"
             android:textAlignment="center"
             android:backgroundTint="@color/white"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="0dp"/>
         <Button
             android:id="@+id/btnSave"
@@ -149,7 +149,7 @@
             android:text="LƯU"
             android:textColor="#E1512C"
             android:textAlignment="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="0dp"
             android:layout_marginRight="35dp"
             android:layout_toRightOf="@id/btnnewpw"

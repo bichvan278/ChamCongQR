@@ -10,28 +10,32 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+
         <EditText
-            android:id="@+id/date"
+            android:id="@+id/pickWeek"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             android:background="#241C1C"
-            android:hint="dd/mm/yyyy - dd/mm/yyyy"
+            android:hint="dd/mm/yyyy"
             android:padding="15dp"
             android:textColorHint="@color/white"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <ListView
-            android:id="@+id/viewdata"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/date"
-            android:divider="#4F4F4F"
-            android:dividerHeight="1dp"
-            android:listSelector="#E1512C"/>
+
+
+
+<!--        <ListView-->
+<!--            android:id="@+id/viewdata"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_below="@id/startDate"-->
+<!--            android:divider="#4F4F4F"-->
+<!--            android:dividerHeight="1dp"-->
+<!--            android:listSelector="#E1512C"/>-->
     </RelativeLayout>
 
 </LinearLayout>

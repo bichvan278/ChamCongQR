@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.chamcong.Connect.ConnectionHelper;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -45,7 +43,7 @@ public class Dangnhap extends AppCompatActivity {
 
                 if(Username.trim().equals("")|| Password.trim().equals(""))
                     Toast.makeText(Dangnhap.this, "Hãy nhập tên đăng nhập và mật khẩu",
-                                                        Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_LONG).show();
                 else
                 {
                     try {

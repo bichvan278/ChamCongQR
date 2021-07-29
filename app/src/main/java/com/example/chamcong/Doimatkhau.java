@@ -33,8 +33,8 @@ public class Doimatkhau extends AppCompatActivity {
         btnSavepw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newpw1 = newpw.getText().toString();
-                String rpnewpw = newpw2.getText().toString();
+                String newpw1 = newpw.getText().toString().trim();
+                String rpnewpw = newpw2.getText().toString().trim();
 
                 ConnectionHelper conn = new ConnectionHelper();
                 connect = conn.CONN();
@@ -60,7 +60,7 @@ public class Doimatkhau extends AppCompatActivity {
                         connect = conHelper.CONN();
 
                         if (connect != null){
-                            String query = " ";
+                            String query = "UPDATE Logins SET password = 'newpw1'";
                             Statement st = connect.createStatement();
                             ResultSet result = st.executeQuery(query);
                             if(result.next())

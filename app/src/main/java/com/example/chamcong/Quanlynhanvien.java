@@ -1,18 +1,11 @@
 package com.example.chamcong;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.SearchView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,13 +16,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.chamcong.Adapter.DSCVAdapter;
-import com.example.chamcong.Adapter.DSNVAdapter;
-import com.example.chamcong.Connect.ConnectionHelper;
-import com.example.chamcong.Object.Chucvu;
 import com.example.chamcong.Object.User;
 
 import org.json.JSONArray;
@@ -37,8 +25,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+
+//import com.example.chamcong.Connect.ConnectionHelper;
 
 public class Quanlynhanvien extends AppCompatActivity {
 
