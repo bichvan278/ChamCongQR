@@ -51,7 +51,7 @@
             android:layout_height="52dp"
             android:layout_marginLeft="30dp"
             android:padding="5dp"
-            android:text="Tên đăng nhập"
+            android:hint="Tên đăng nhập"
             android:textColor="#C4C4C4"/>
         <EditText
             android:id="@+id/password"
@@ -61,8 +61,8 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/username"
             android:padding="5dp"
-            android:text="Mật khẩu"
-            android:textColor="#C4C4C4"/>
+            android:hint="Mật khẩu"
+            android:hintColor="#C4C4C4"/>
         <Button
             android:id="@+id/btnlogin"
             android:layout_width="250dp"

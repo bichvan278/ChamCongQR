@@ -54,7 +54,7 @@ public class Dangnhap extends AppCompatActivity {
                             Toast.makeText(Dangnhap.this, "Lỗi kết nối",
                                     Toast.LENGTH_LONG).show();
                         } else {
-                            String query = "SELECT * FROM *****";
+                            String query = "SELECT * FROM Logins";
                             Statement stmt = con.createStatement();
                             ResultSet rs = stmt.executeQuery(query);
 

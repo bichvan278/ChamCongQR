@@ -2,31 +2,17 @@ package com.example.chamcong;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.chamcong.Connect.ConnectionHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.example.chamcong.MyUtil.jsonArrayUser;
 
@@ -111,14 +97,14 @@ public class Thongtinuser extends AppCompatActivity {
 //            }
 //        });
 
-//        btnnewpw.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(Thongtinuser.this, Doimatkhau.class);
-//                startActivity(i);
-//            }
-//        });
-//    }
+        btnnewpw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Thongtinuser.this, Doimatkhau.class);
+                startActivity(i);
+            }
+        });
+    }
 //
 //    private void insertdata(String u_hoten, String u_sdt, String u_gioitinh, String u_email, String u_diachi, String u_phuong, String u_quan, String u_tp) {
 //
@@ -214,5 +200,4 @@ public class Thongtinuser extends AppCompatActivity {
 //        }catch (Exception ex){
 //            Log.e("Error:", ex.getMessage());
 //        }
-    }
 }

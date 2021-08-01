@@ -38,7 +38,7 @@ public class Quanlynhanvien extends AppCompatActivity {
         lstData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                Intent intent = new Intent(Quanlynhanvien.this, Thongtinuser.class);
+                Intent intent = new Intent(Quanlynhanvien.this, Dieuchinhnhanvien.class);
                 intent.putExtra("userdata",i);
                 startActivity(intent);
 

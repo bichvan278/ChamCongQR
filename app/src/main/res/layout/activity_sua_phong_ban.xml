@@ -36,7 +36,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
-            android:text="Tên phòng ban"
+            android:hint="Tên phòng ban"
             android:textColor="#C4C4C4" />
         <Button
             android:id="@+id/btnThem"
