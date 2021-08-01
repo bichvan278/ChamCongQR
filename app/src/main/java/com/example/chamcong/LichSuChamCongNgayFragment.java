@@ -37,7 +37,7 @@ public class LichSuChamCongNgayFragment extends Fragment  {
                 // calender class's instance and get current date , month and year from calender
                 Calendar cal = Calendar.getInstance(TimeZone.getDefault()); // Get current date
 
-// Create the DatePickerDialog instance
+                // Create the DatePickerDialog instance
                 DatePickerDialog datePicker = new DatePickerDialog(getContext(), datePickerListener,
                         cal.get(Calendar.YEAR),
                         cal.get(Calendar.MONTH),
@@ -46,7 +46,7 @@ public class LichSuChamCongNgayFragment extends Fragment  {
                 datePicker.setTitle("Select the date");
                 datePicker.show();
 
-// Listener
+                // Listener
                 datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
                     // when dialog box is closed, below method will be called.
