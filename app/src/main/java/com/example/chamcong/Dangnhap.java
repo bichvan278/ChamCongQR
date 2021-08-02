@@ -3,22 +3,12 @@ package com.example.chamcong;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.chamcong.API.APIService;
-import com.example.chamcong.API.ApiClient;
-import com.example.chamcong.Object.User;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Dangnhap extends AppCompatActivity {
 
@@ -30,29 +20,41 @@ public class Dangnhap extends AppCompatActivity {
 
     private static final String DATABASE_NAME = "Db_chamcong.db";
 
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_dangnhap);
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dangnhap);
+         BtnDangnhap = (Button) findViewById(R.id.btnlogin);
+         EtUsername = (EditText) findViewById(R.id.username);
+         EtPassword = (EditText) findViewById(R.id.password);
 
-        BtnDangnhap = (Button) findViewById(R.id.btnlogin);
-        EtUsername = (EditText) findViewById(R.id.username);
-        EtPassword = (EditText) findViewById(R.id.password);
+         BtnDangnhap.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
 
-        BtnDangnhap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                login();
-                Intent i = new Intent(Dangnhap.this, TrangchuAdmin.class);
-                startActivity(i);
-            }
-        });
-    }
+                 String username = EtUsername.getText().toString().trim();
+                 String password = EtPassword.getText().toString().trim();
 
-//    private void login() {
+                 if(username == null || username.trim().length() == 0){
+                     Toast.makeText(Dangnhap.this, "Username is required", Toast.LENGTH_SHORT).show();
+                 }
+                 if(password == null || password.trim().length() == 0){
+                     Toast.makeText(Dangnhap.this, "Password is required", Toast.LENGTH_SHORT).show();
+                 }else if(username == "user1" && password == "1111"){
+                     Intent intent = new Intent(Dangnhap.this, Trangchu.class);
+                     startActivity(intent);
+                 }else {
+                     Intent i = new Intent(Dangnhap.this, TrangchuAdmin.class);
+                     startActivity(i);
+                 }
+             }
+         });
+     }
+
+//    private void login(String username, String password) {
 //        Log.d(TAG, "Login");
 //
-//        if (!validate()) {
+//        if (!validate(username,password)) {
 //            onLoginFailed();
 //            return;
 //        }
@@ -82,7 +84,7 @@ public class Dangnhap extends AppCompatActivity {
 //            public void onResponse(Call<User> call, Response<User> response) {
 //                hidepDialog();
 //
-//                if (response.code() == 200) {
+//                if (response.isSuccessful()) {
 //                    onLoginSuccess();
 //                } else {
 //                    Toast.makeText(Dangnhap.this, "Wrong password : ErrorCode : 200" + response.toString(), Toast.LENGTH_SHORT).show();
@@ -120,8 +122,8 @@ public class Dangnhap extends AppCompatActivity {
 //    }
 //
 //    public void onLoginSuccess() {
-//        startActivity(new Intent(Dangnhap.this, MainActivity.class));
-//        finish();
+//        Intent i = new Intent(Dangnhap.this, Trangchu.class);
+//        startActivity(i);
 //    }
 //
 //    public void onLoginFailed() {
@@ -131,11 +133,11 @@ public class Dangnhap extends AppCompatActivity {
 //        BtnDangnhap.setEnabled(true);
 //    }
 //
-//    public boolean validate() {
+//    public boolean validate(String username, String password) {
 //        boolean valid = true;
 //
-//        String username = EtUsername.getText().toString();
-//        String password = EtPassword.getText().toString();
+////        String username = EtUsername.getText().toString();
+////        String password = EtPassword.getText().toString();
 //
 //        if (username.isEmpty()) {
 //            EtUsername.setError("Enter a valid username");
@@ -161,6 +163,5 @@ public class Dangnhap extends AppCompatActivity {
 //            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 //        }
 //    }
-
+//
 }
-
