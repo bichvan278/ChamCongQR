@@ -36,7 +36,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginLeft="25dp"
             android:hint="Nhập mật khẩu mới"
-            android:hintColor="#C4C4C4" />
+            android:textColorHint="#C4C4C4" />
         <EditText
             android:id="@+id/newpw2"
             android:layout_width="350dp"
@@ -45,7 +45,7 @@
             android:layout_marginLeft="25dp"
             android:layout_below="@id/newpw"
             android:hint="Nhập lại mật khẩu mới"
-            android:textColor="#C4C4C4" />
+            android:textColorHint="#C4C4C4" />
         <Button
             android:id="@+id/btnSavepw"
             android:layout_width="150dp"
