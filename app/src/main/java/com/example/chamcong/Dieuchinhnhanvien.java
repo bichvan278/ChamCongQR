@@ -14,23 +14,23 @@ public class Dieuchinhnhanvien extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dieuchinhnhanvien);
-
-        btnSave = btnSave.findViewById(R.id.btnLuu);
-        btnDel = btnDel.findViewById(R.id.btnXoa);
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-         btnDel.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 btnDel.setVisibility(v.GONE);
-                 Toast.makeText(Dieuchinhnhanvien.this, "Xóa thành công", Toast.LENGTH_SHORT).show();
-             }
-         });
+//        setContentView(R.layout.activity_dieuchinhnhanvien);
+//
+//        btnSave = btnSave.findViewById(R.id.btnLuu);
+//        btnDel = btnDel.findViewById(R.id.btnXoa);
+//
+//        btnSave.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//         btnDel.setOnClickListener(new View.OnClickListener() {
+//             @Override
+//             public void onClick(View v) {
+//                 btnDel.setVisibility(v.GONE);
+//                 Toast.makeText(Dieuchinhnhanvien.this, "Xóa thành công", Toast.LENGTH_SHORT).show();
+//             }
+//         });
     }
 }

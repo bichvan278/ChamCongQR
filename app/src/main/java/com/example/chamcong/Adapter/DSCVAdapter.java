@@ -5,14 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
 import android.widget.TextView;
 
 import com.example.chamcong.MyUtil;
+import com.example.chamcong.Object.Chucvu;
 import com.example.chamcong.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DSCVAdapter extends BaseAdapter {
@@ -61,4 +66,43 @@ public class DSCVAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+//    public Filter getFilter() {
+//
+//        Filter filter = new Filter() {
+//
+//        @SuppressWarnings("unchecked")
+//        @Override
+//        protected void publishResults(CharSequence constraint, FilterResults results) {
+//
+//            arrayListNames = (JSONArrayChucvu) results.values;
+//            notifyDataSetChanged();
+//        }
+//
+//        @Override
+//        protected FilterResults performFiltering(CharSequence constraint) {
+//
+//            FilterResults results = new FilterResults();
+//            ArrayList<Chucvu> FilteredArrayNames = new ArrayList<Chucvu>();
+//
+//            // perform your search here using the searchConstraint String.
+//
+//            constraint = constraint.toString().toLowerCase();
+//            for (int i = 0; i < mDatabaseOfNames.size(); i++) {
+//                String dataNames = mDatabaseOfNames.get(i);
+//                if (dataNames.toLowerCase().startsWith(constraint.toString()))  {
+//                    FilteredArrayNames.add(dataNames);
+//                }
+//            }
+//
+//            results.count = FilteredArrayNames.size();
+//            results.values = FilteredArrayNames;
+//            Log.e("VALUES", results.values.toString());
+//
+//            return results;
+//        }
+//    };
+//
+//        return filter;
+//    }
 }

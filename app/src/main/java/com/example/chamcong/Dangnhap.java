@@ -1,26 +1,32 @@
 package com.example.chamcong;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.chamcong.Connect.ConnectionHelper;
+import com.example.chamcong.API.APIService;
+import com.example.chamcong.API.ApiClient;
+import com.example.chamcong.Object.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Dangnhap extends AppCompatActivity {
 
     private Button BtnDangnhap;
     private EditText EtUsername, EtPassword;
-    String Username, Password;
-    ConnectionHelper connection;
+    private static final String TAG = "Dangnhap";
+    private static final int REQUEST_SIGNUP = 0;
+    private ProgressDialog pDialog;
 
     private static final String DATABASE_NAME = "Db_chamcong.db";
 
@@ -30,56 +36,128 @@ public class Dangnhap extends AppCompatActivity {
         setContentView(R.layout.activity_dangnhap);
 
         BtnDangnhap = (Button) findViewById(R.id.btnlogin);
-
         EtUsername = (EditText) findViewById(R.id.username);
         EtPassword = (EditText) findViewById(R.id.password);
 
         BtnDangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                String Username = EtUsername.getText().toString();
-                String Password = EtPassword.getText().toString();
-                Connection connection = ConnectionHelper.CONN();
-
-
-                if(Username.trim().equals("")|| Password.trim().equals(""))
-                    Toast.makeText(Dangnhap.this, "Hãy nhập tên đăng nhập và mật khẩu",
-                            Toast.LENGTH_LONG).show();
-                else
-                {
-                    try {
-                        Connection con = ConnectionHelper.CONN();
-                        if (con == null) {
-                            Toast.makeText(Dangnhap.this, "Lỗi kết nối",
-                                    Toast.LENGTH_LONG).show();
-                        } else {
-                            String query = "SELECT * FROM *****";
-                            Statement stmt = con.createStatement();
-                            ResultSet rs = stmt.executeQuery(query);
-
-                            if(rs.next())
-                            {
-
-                                Toast.makeText(Dangnhap.this, "Đăng nhập thành công",
-                                        Toast.LENGTH_LONG).show();
-                            }
-                            else
-                            {
-                                Toast.makeText(Dangnhap.this, "Đăng nhập thất bại",
-                                        Toast.LENGTH_LONG).show();
-                            }
-
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.e("ERRO", e.getMessage());
-                    }
-                }
-                Toast.makeText(Dangnhap.this, "Hãy nhập tên đăng nhập và mật khẩu",
-                        Toast.LENGTH_LONG).show();
+            public void onClick(View view) {
+                login();
             }
         });
     }
+
+    private void login() {
+        Log.d(TAG, "Login");
+
+        if (!validate()) {
+            onLoginFailed();
+            return;
+        }
+        BtnDangnhap.setEnabled(false);
+        loginByServer();
+    }
+
+    private void loginByServer() {
+        pDialog = new ProgressDialog(Dangnhap.this);
+        pDialog.setIndeterminate(true);
+        pDialog.setMessage("Creating Account...");
+        pDialog.setCancelable(false);
+
+        showpDialog();
+
+        String username = EtUsername.getText().toString();
+        String password = EtPassword.getText().toString();
+
+
+        APIService service = ApiClient.getClient().create(APIService.class);
+        User user = new User();
+        user.setUser_name(username);
+        user.setUser_pw(password);
+
+        service.userLogIn(user).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                hidepDialog();
+
+                if (response.code() == 200) {
+                    onLoginSuccess();
+                } else {
+                    Toast.makeText(Dangnhap.this, "Wrong password : ErrorCode : 200" + response.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                hidepDialog();
+            }
+        });
+    }
+    private void showpDialog() {
+
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hidepDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_SIGNUP) {
+            if (resultCode == RESULT_OK) {
+
+                // TODO: Implement successful signup logic here
+            }
+        }
+    }
+
+    public void onLoginSuccess() {
+        startActivity(new Intent(Dangnhap.this, MainActivity.class));
+        finish();
+    }
+
+    public void onLoginFailed() {
+
+        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+
+        BtnDangnhap.setEnabled(true);
+    }
+
+    public boolean validate() {
+        boolean valid = true;
+
+        String username = EtUsername.getText().toString();
+        String password = EtPassword.getText().toString();
+
+        if (username.isEmpty()) {
+            EtUsername.setError("Enter a valid username");
+            requestFocus(EtUsername);
+            valid = false;
+        } else {
+            EtUsername.setError(null);
+        }
+
+        if (password.isEmpty()) {
+            EtPassword.setError("Password is empty");
+            requestFocus(EtPassword);
+            valid = false;
+        } else {
+            EtPassword.setError(null);
+        }
+
+        return valid;
+    }
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
+    }
+
 }

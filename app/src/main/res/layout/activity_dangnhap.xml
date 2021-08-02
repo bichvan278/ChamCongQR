@@ -62,7 +62,7 @@
             android:layout_below="@id/username"
             android:padding="5dp"
             android:hint="Mật khẩu"
-            android:hintColor="#C4C4C4"/>
+            android:textColor="#C4C4C4"/>
         <Button
             android:id="@+id/btnlogin"
             android:layout_width="250dp"
