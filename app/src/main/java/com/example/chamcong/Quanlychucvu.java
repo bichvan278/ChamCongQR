@@ -6,10 +6,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.chamcong.Adapter.DSCVAdapter;
+import com.example.chamcong.Adapter.DSPBAdapter;
 
 
 import org.json.JSONArray;
@@ -66,7 +68,7 @@ public class Quanlychucvu extends AppCompatActivity {
             StringBuffer response = new StringBuffer();
 
             try {
-                URL url = new URL(MyUtil.URL_CHUCVU);
+                URL url = new URL(MyUtil.URL_PHONGBAN);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 InputStreamReader ir = new InputStreamReader(urlConnection.getInputStream());
                 BufferedReader br = new BufferedReader(ir);
@@ -93,6 +95,7 @@ public class Quanlychucvu extends AppCompatActivity {
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
 
+//            adapter = new DSPBAdapter(QuanLyPhongBan.this,  MyUtil.jsonArrayPhongban);
             adapter = new DSCVAdapter(Quanlychucvu.this,  MyUtil.jsonArrayChucvu);
             lstData.setAdapter(adapter);
 
