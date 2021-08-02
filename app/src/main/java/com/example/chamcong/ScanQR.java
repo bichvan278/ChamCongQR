@@ -12,6 +12,7 @@ import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,11 +36,28 @@ public class ScanQR extends Activity {
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
     String intentData = "";
+    Button Btnhuyqr, Btnnghi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_q_r);
+
+        Btnhuyqr = findViewById(R.id.btnhuyqr);
+        Btnnghi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ScanQR.this, TrangchuAdmin.class);
+                startActivity(i);
+            }
+        });
+        Btnnghi = findViewById(R.id.btnnghi);
+        Btnnghi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // chưa nhập
+            }
+        });
         initComponents();
     }
 
